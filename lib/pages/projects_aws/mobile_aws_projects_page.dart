@@ -88,6 +88,58 @@ class MobileAwsProjectsPage extends StatelessWidget {
               title: "技術面",
               description:
                   "・プライベートサブネットに配置したRDSにより、堅牢なデータベースを実現しました。\n・API Gatewayを用いて、RestAPIを開発しました。\n・API GatewayとLambdaにより、RDS（データベース）へのCRUD操作を実現しました。\n・SystemsManagerを使用し、安全に快適なデータベース操作を可能にしました。"),
+          buildDivider(),
+          Image.asset(
+            "assets/architecture/architecture_unity.png",
+            fit: BoxFit.cover,
+          ),
+          const ProjectDescriptionWidget(
+              title: "リソース", description: "・Cloud Front\n・S3"),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "フロー",
+                description:
+                    "① CloudFrontへアクセス\n② S3のオブジェクトをロード\n③,④ ロードしたオブジェクトを返す"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "技術面",
+              description:
+                  "・S3にUnityのオブジェクトを保存しました。\n・保存したオブジェクトをCloudFront経由でロードします。"),
+          buildDivider(),
+          Image.asset(
+            "assets/architecture/architecture_1.png",
+            fit: BoxFit.cover,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed: Github_AWS_RDSURL,
+                  icon: FaIcon(
+                    FontAwesomeIcons.github,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+          ),
+          const ProjectDescriptionWidget(
+              title: "リソース",
+              description:
+                  "・API Gateway\n・Lambda\n・Translate\n・DynamoDB\n・Cloud Watch"),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "フロー",
+                description:
+                    "① GETメソッドでAPIを叩く。パスパラメータにテキストを持たせる\n② Lambda関数を実行\n③ パスパラメータから受け取ったテキストを翻訳サービスに送る\n④ 翻訳サービスで翻訳したテキストを返す\n⑤ パスパラメータのテキスト、翻訳したテキスト、時間をDynamoDBに保存する\n⑥ DynamoDBから取得したデータを返す\n⑦ 加工したデータをJSON形式で返す"),
+          ),
+          const ProjectDescriptionWidget(
+              title: "技術面", description: "・パスパラメータで受け取ったデータを加工して、返すAPIを構築した。"),
           const SizedBox(
             height: 80,
           ),

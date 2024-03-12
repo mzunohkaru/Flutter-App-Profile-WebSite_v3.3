@@ -122,6 +122,87 @@ class DesktopAwsProjectsPage extends HookWidget {
                 description:
                     "① GETメソッドでAPIを叩く。パスパラメータにidを持たせる\n② Lambda関数を実行 \n③ RDBのデータへパスパラメータから受け取ったidのデータを検索し、返すように要求\n④ RDBから検索結果のデータを返す\n⑤,⑥ RDBから取得したデータをJSON形式で返す\n⑦ EC2へアクセス\n⑧ コンソールでデータの操作を行う"),
           ),
+          buildDivider(),
+          Row(
+            children: [
+              Image.asset(
+                "assets/architecture/architecture_unity.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                height: deviceHeight / 1.7,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "リソース", description: "・Cloud Front\n・S3"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "技術面",
+                          description:
+                              "・S3にUnityのオブジェクトを保存しました。\n・保存したオブジェクトをCloudFront経由でロードします。"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "フロー",
+                description:
+                    "① CloudFrontへアクセス\n② S3のオブジェクトをロード\n③,④ ロードしたオブジェクトを返す"),
+          ),
+          buildDivider(),
+          Row(
+            children: [
+              Image.asset(
+                "assets/architecture/architecture_1.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                height: deviceHeight / 1.7,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "リソース",
+                          description:
+                              "・API Gateway\n・Lambda\n・Translate\n・DynamoDB\n・Cloud Watch"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "技術面",
+                          description: "・パスパラメータで受け取ったデータを加工して、返すAPIを構築した。"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: ProjectDescriptionWidget(
+                title: "フロー",
+                description:
+                    "① GETメソッドでAPIを叩く。パスパラメータにテキストを持たせる\n② Lambda関数を実行\n③ パスパラメータから受け取ったテキストを翻訳サービスに送る\n④ 翻訳サービスで翻訳したテキストを返す\n⑤ パスパラメータのテキスト、翻訳したテキスト、時間をDynamoDBに保存する\n⑥ DynamoDBから取得したデータを返す\n⑦ 加工したデータをJSON形式で返す"),
+          ),
           const SizedBox(
             height: 80,
           ),
