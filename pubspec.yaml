@@ -1,0 +1,49 @@
+name: flutter_profile_web_33
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+
+  # Network
+  url_launcher: any
+  http: any
+
+  # UI
+  simple_animations: any
+  supercharged: any
+  sidebarx: any
+  font_awesome_flutter: any
+
+  # 状態管理
+  flutter_riverpod: any
+  flutter_hooks: any
+  hooks_riverpod: any
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/app/
+    - assets/utils/
+    - assets/projects/
+    - assets/architecture/
