@@ -1,16 +1,15 @@
-# flutter_profile_web_33
+# Web Site URL
 
-A new Flutter project.
+https://mizuno-hikaru-profile.web.app/
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Github Action
 
-A few resources to get you started if this is your first Flutter project:
+$ git add -A
+$ git commit -am "first deploy"
+$ git push origin HEAD
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Firebaes Hosting Deploy
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+$ flutter build web
+$ firebase deploy --only hosting
