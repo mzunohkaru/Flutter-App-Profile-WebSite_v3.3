@@ -25,6 +25,61 @@ class DesktopAwsProjectsPage extends HookWidget {
           Row(
             children: [
               Image.asset(
+                "assets/architecture/architecture_node.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                height: deviceHeight / 1.7,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語",
+                          description: "・JavaScript ・NodeJS"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "リソース",
+                          description:
+                              "・API Gateway\n・Lambda\n・DynamoDB\n・Cloud Watch"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "技術面",
+                          description:
+                              "・LambdaとDynamoDBを用いて、サーバーレスなバックエンドを構築しました。\n・API Gatewayを用いて、RestAPIを開発しました。\n・トークンによる認証機能を実装しました。\n・APIメソッドには、GET、POST、PUT、DELETEの基本的なものを用意し、データベースへのCRUD操作を実現しました。"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      SizedBox(
+                        height: 63,
+                        width: 190,
+                        child: GithubCardButtonWidget(
+                          callback: Github_AWS_NodeJSURL,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const ProjectDescriptionWidget(
+              title: "フロー",
+              description:
+                  "① POST・GET・PUT・DELETEメソッドでAPIを叩く\n② Auth トークンを検証し、ユーザー認証を行う \n③ DynamoDBへパスパラメータから受け取ったデータを保存する\n④ GET Lambda関数を実行\n⑤ パスパラメータにidがある場合は、idと一致するデータを返す。パスパラメータにidがない場合は、すべてのデータを返す。\n⑥,⑦ DynamoDBから取得したデータをJSON形式で返す\n⑧ PUT Lambda関数を実行\n⑨ パスパラメータから受け取ったidと一致するDynamoDBのデータを更新する\n10 DELETE Lambda関数を実行\n11 パスパラメータから受け取ったidと一致するDynamoDBのデータを削除する"),
+          buildDivider(),
+          Row(
+            children: [
+              Image.asset(
                 "assets/architecture/architecture_9.png",
                 filterQuality: FilterQuality.medium,
                 fit: BoxFit.fitWidth,
@@ -36,6 +91,11 @@ class DesktopAwsProjectsPage extends HookWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語", description: "・Python"),
+                      SizedBox(
+                        height: 16,
+                      ),
                       ProjectDescriptionWidget(
                           title: "リソース",
                           description:
@@ -85,6 +145,11 @@ class DesktopAwsProjectsPage extends HookWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語", description: "・Python"),
+                      SizedBox(
+                        height: 16,
+                      ),
                       ProjectDescriptionWidget(
                           title: "リソース",
                           description:
@@ -177,6 +242,11 @@ class DesktopAwsProjectsPage extends HookWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語", description: "・Python"),
+                      SizedBox(
+                        height: 16,
+                      ),
                       ProjectDescriptionWidget(
                           title: "リソース",
                           description:

@@ -10,9 +10,11 @@ Uri github_flutter_instagram =
 Uri github_flutter_translation =
     Uri.parse('https://github.com/mzunohkaru/Flutter-App-Translation');
 // Flutter Food
-Uri github_flutter_food = Uri.parse('https://github.com/runhikaru/Food-UI-Demo');
+Uri github_flutter_food =
+    Uri.parse('https://github.com/runhikaru/Food-UI-Demo');
 // Flutter Memo
-Uri github_flutter_memo = Uri.parse('https://github.com/runhikaru/Local-Auth-Memo-App');
+Uri github_flutter_memo =
+    Uri.parse('https://github.com/runhikaru/Local-Auth-Memo-App');
 // const githubTravel = 'https://github.com/runhikaru/Travel-UI-Demo';
 
 // Swift TikTok
@@ -35,11 +37,26 @@ Uri github_swift_crypto =
     Uri.parse("https://github.com/mzunohkaru/SwiftUI-Sample-API");
 
 // AWS DynamoDB
-Uri github_aws_dynamodb =
-    Uri.parse("https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/func_9");
+Uri github_aws_dynamodb = Uri.parse(
+    "https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/python/func_9");
 // AWS RDS
-Uri github_aws_rds =
-    Uri.parse("https://github.com/mzunohkaru/AWS-Sample-Lambda-API");
+Uri github_aws_rds = Uri.parse(
+    "https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/python");
+// AWS NodeJS
+Uri github_aws_nodejs = Uri.parse(
+    "https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/nodejs");
+
+// Docker NodeJS GraphQL PostgreSQL
+Uri github_docker_graph_posgre = Uri.parse(
+    "https://github.com/mzunohkaru/Node-Sample-GraphQL-PostgreSQL-ORM-Docker");
+
+// Docker NodeJS RestAPI MySQL
+Uri github_docker_restapi_mysql = Uri.parse(
+    "https://github.com/mzunohkaru/Node-Sample-RestAPI-MySQL-ORM-Docker");
+
+// Docker NodeJS RestAPI PostgreSQL
+Uri github_docker_restapi_posgre = Uri.parse(
+    "https://github.com/mzunohkaru/Node-Sample-RestAPI-PostgreSQL-ORM-Docker");
 
 // Youtube URL----------------------------------------------------------------
 Uri youtube = Uri.parse("https://www.youtube.com/@hikaru-mizuno/videos");

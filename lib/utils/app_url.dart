@@ -130,6 +130,26 @@ Future<void> Github_AWS_RDSURL() async =>
         ? await launchUrl(github_aws_rds)
         : throw 'Could not launchUrl $github_aws_rds';
 
+Future<void> Github_AWS_NodeJSURL() async =>
+    await canLaunchUrl(github_aws_nodejs)
+        ? await launchUrl(github_aws_nodejs)
+        : throw 'Could not launchUrl $github_aws_nodejs';
+
+// Docker
+Future<void> Github_Docker_GraphQLPostgreSQLURL() async =>
+    await canLaunchUrl(github_docker_graph_posgre)
+        ? await launchUrl(github_docker_graph_posgre)
+        : throw 'Could not launchUrl $github_docker_graph_posgre';
+
+Future<void> Github_Docker_RestAPIMySQLURL() async =>
+    await canLaunchUrl(github_docker_restapi_mysql)
+        ? await launchUrl(github_docker_restapi_mysql)
+        : throw 'Could not launchUrl $github_docker_restapi_mysql';
+
+Future<void> Github_Docker_RestAPIPostgreSQLURL() async =>
+    await canLaunchUrl(github_docker_restapi_posgre)
+        ? await launchUrl(github_docker_restapi_posgre)
+        : throw 'Could not launchUrl $github_docker_restapi_posgre';
 
 // Youtube App----------------------------------------------------------------
 Future<void> Youtube_URL() async =>

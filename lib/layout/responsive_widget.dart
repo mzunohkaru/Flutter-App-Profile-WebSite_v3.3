@@ -7,6 +7,8 @@ import 'package:flutter_profile_web_33/pages/products/desktop_products_page.dart
 import 'package:flutter_profile_web_33/pages/products/mobile_products_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_aws/desktop_aws_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_aws/mobile_aws_projects_page.dart';
+import 'package:flutter_profile_web_33/pages/projects_backend/desktop_backend_projects_page.dart';
+import 'package:flutter_profile_web_33/pages/projects_backend/mobile_backend_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_flutter/mobile_flutter_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_swift/desktop_swift_projects_page.dart';
@@ -107,6 +109,13 @@ class SideMenuWidget extends StatelessWidget {
           label: 'AWS',
         ),
         SidebarXItem(
+          iconWidget: FaIcon(
+            FontAwesomeIcons.docker,
+            color: Colors.blue,
+          ),
+          label: 'Docker',
+        ),
+        SidebarXItem(
           iconWidget: Icon(
             Icons.shield,
             color: Colors.grey,
@@ -178,12 +187,16 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                 : DesktopAwsProjectsPage(deviceHeight: deviceHeight);
           case 4:
             return widget.mobile
+                ? const MobileBackendProjectsPage()
+                : DesktopBackendProjectsPage(deviceWidth: deviceWidth);
+          case 5:
+            return widget.mobile
                 ? MobilePolicyPage(
                     isJP: true,
                     deviceWidth: deviceWidth,
                     deviceHeight: deviceHeight)
                 : const DesktopPolicyPage();
-          case 5:
+          case 6:
             return widget.mobile
                 ? const MobileContactPage()
                 : DesktopContactPage(deviceWidth: deviceWidth);
