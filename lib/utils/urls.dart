@@ -58,6 +58,14 @@ Uri github_docker_restapi_mysql = Uri.parse(
 Uri github_docker_restapi_posgre = Uri.parse(
     "https://github.com/mzunohkaru/Node-Sample-RestAPI-PostgreSQL-ORM-Docker");
 
+// Docker Python RestAPI MySQL
+Uri github_docker_restapi_mysql_python = Uri.parse(
+    "https://github.com/mzunohkaru/Python-Sample-FastAPI-MySQL-Docker");
+
+// Docker Python RestAPI PostgreSQL
+Uri github_docker_restapi_posgre_python = Uri.parse(
+    "https://github.com/mzunohkaru/Python-Sample-FastAPI-PostgreSQL-Docker");
+
 // Youtube URL----------------------------------------------------------------
 Uri youtube = Uri.parse("https://www.youtube.com/@hikaru-mizuno/videos");
 Uri youtube_flutter_tiktok =

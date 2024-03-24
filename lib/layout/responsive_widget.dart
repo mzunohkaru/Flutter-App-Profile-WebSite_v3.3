@@ -13,7 +13,6 @@ import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_pr
 import 'package:flutter_profile_web_33/pages/projects_flutter/mobile_flutter_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_swift/desktop_swift_projects_page.dart';
 import 'package:flutter_profile_web_33/pages/projects_swift/mobile_swift_projects_page.dart';
-import 'package:flutter_profile_web_33/utils/app_url.dart';
 import 'package:flutter_profile_web_33/utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';

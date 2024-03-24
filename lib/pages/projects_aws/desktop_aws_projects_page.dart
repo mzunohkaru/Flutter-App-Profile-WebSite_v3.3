@@ -72,10 +72,14 @@ class DesktopAwsProjectsPage extends HookWidget {
           const SizedBox(
             height: 16,
           ),
-          const ProjectDescriptionWidget(
-              title: "フロー",
-              description:
-                  "① POST・GET・PUT・DELETEメソッドでAPIを叩く\n② Auth トークンを検証し、ユーザー認証を行う \n③ DynamoDBへパスパラメータから受け取ったデータを保存する\n④ GET Lambda関数を実行\n⑤ パスパラメータにidがある場合は、idと一致するデータを返す。パスパラメータにidがない場合は、すべてのデータを返す。\n⑥,⑦ DynamoDBから取得したデータをJSON形式で返す\n⑧ PUT Lambda関数を実行\n⑨ パスパラメータから受け取ったidと一致するDynamoDBのデータを更新する\n10 DELETE Lambda関数を実行\n11 パスパラメータから受け取ったidと一致するDynamoDBのデータを削除する"),
+          const ProjectDescriptionWidget(title: "フロー", description: '''
+① POST・GET・PUT・DELETEメソッドでAPIを叩く
+② Auth トークンを検証し、ユーザー認証を行う
+CREATE DynamoDBにデータを挿入
+READ DynamoDBからデータ (全データ＆パスパラメータのIDと一致するデータ) を取得
+PUT  DynamoDBのデータを更新
+DELETE DynamoDBのデータを削除
+'''),
           buildDivider(),
           Row(
             children: [
@@ -126,10 +130,13 @@ class DesktopAwsProjectsPage extends HookWidget {
           const SizedBox(
             height: 16,
           ),
-          const ProjectDescriptionWidget(
-              title: "フロー",
-              description:
-                  "① POST・GET・PUT・DELETEメソッドでAPIを叩く\n② POST Lambda関数を実行 \n③ DynamoDBへパスパラメータから受け取ったデータを保存する\n④ GET Lambda関数を実行\n⑤ パスパラメータにidがある場合は、idと一致するデータを返す。パスパラメータにidがない場合は、すべてのデータを返す。\n⑥,⑦ DynamoDBから取得したデータをJSON形式で返す\n⑧ PUT Lambda関数を実行\n⑨ パスパラメータから受け取ったidと一致するDynamoDBのデータを更新する\n10 DELETE Lambda関数を実行\n11 パスパラメータから受け取ったidと一致するDynamoDBのデータを削除する"),
+          const ProjectDescriptionWidget(title: "フロー", description: '''
+① POST・GET・PUT・DELETEメソッドでAPIを叩く
+②-CREATE DynamoDBにデータを挿入
+②-READ DynamoDBからデータ (全データ＆パスパラメータのIDと一致するデータ) を取得
+②-PUT  DynamoDBのデータを更新
+②-DELETE DynamoDBのデータを削除
+'''),
           buildDivider(),
           Row(
             children: [

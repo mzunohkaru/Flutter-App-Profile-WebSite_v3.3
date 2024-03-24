@@ -64,10 +64,14 @@ class DesktopBackendProjectsPage extends HookWidget {
           const SizedBox(
             height: 16,
           ),
-          const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・DockerComposeにNodeJSとPostgreSQLの構築を行う。\n・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。\n・JWTトークンによる認証機能を実装し、APIの安全性を高めた。\n・GraphQLにより、1つのエンドポイントでAPI操作が可能になる。\n・PosgreSQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。"),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+・GraphQLにより、1つのエンドポイントでAPI操作が可能になる。
+・PosgreSQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。
+'''),
           buildDivider(),
           Row(
             children: [
@@ -111,10 +115,12 @@ class DesktopBackendProjectsPage extends HookWidget {
           const SizedBox(
             height: 16,
           ),
-          const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・DockerComposeにNodeJSとMySQLの構築を行う。\n・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。\n・JWTトークンによる認証機能を実装し、APIの安全性を高めた。"),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとMySQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+                  '''),
           buildDivider(),
           Row(
             children: [
@@ -158,10 +164,108 @@ class DesktopBackendProjectsPage extends HookWidget {
           const SizedBox(
             height: 16,
           ),
-          const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・DockerComposeにNodeJSとPostgreSQLの構築を行う。\n・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。\n・JWTトークンによる認証機能を実装し、APIの安全性を高めた。"),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+                  '''),
+          buildDivider(),
+          Row(
+            children: [
+              Image.asset(
+                "assets/architecture/PythonDockerMysqlRestAPI.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                width: deviceWidth / 1.8,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語", description: "・Python ・FastAPI"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "リソース",
+                          description: "・Docker\n・MySQL\n・RestAPI"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      SizedBox(
+                        height: 63,
+                        width: 190,
+                        child: GithubCardButtonWidget(
+                          callback: Github_Docker_RestAPI_MySQL_PythonURL,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにPythonとMySQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+                  '''),
+          buildDivider(),
+          Row(
+            children: [
+              Image.asset(
+                "assets/architecture/PythonDockerPostgresqlRestAPI.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                width: deviceWidth / 1.8,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語", description: "・Python ・FastAPI"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "リソース",
+                          description: "・Docker\n・PostgreSQL\n・RestAPI"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      SizedBox(
+                        height: 63,
+                        width: 190,
+                        child: GithubCardButtonWidget(
+                          callback: Github_Docker_RestAPI_PostgreSQL_PythonURL,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにPythonとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+                  '''),
           const SizedBox(
             height: 80,
           ),

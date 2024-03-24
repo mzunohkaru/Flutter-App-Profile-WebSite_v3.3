@@ -48,10 +48,14 @@ class MobileBackendProjectsPage extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・LambdaとDynamoDBを用いて、サーバーレスなバックエンドを構築しました。\n・API Gatewayを用いて、RestAPIを開発しました。\n・トークンによる認証機能を実装しました。\n・APIメソッドには、GET、POST、PUT、DELETEの基本的なものを用意し、データベースへのCRUD操作を実現しました。"),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+・GraphQLにより、1つのエンドポイントでAPI操作が可能になる。
+・PosgreSQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。
+'''),
           buildDivider(),
           Image.asset(
             "assets/architecture/NodeDockerMysqlRestAPI.png",
@@ -83,10 +87,12 @@ class MobileBackendProjectsPage extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・DockerComposeにNodeJSとMySQLの構築を行う。\n・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。\n・JWTトークンによる認証機能を実装し、APIの安全性を高めた。"),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとMySQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+'''),
           buildDivider(),
           Image.asset(
             "assets/architecture/NodeDockerPostgresqlRestAPI.png",
@@ -118,10 +124,53 @@ class MobileBackendProjectsPage extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+                  '''),
+
+
+                  Image.asset(
+            "assets/architecture/NodeDockerPostgresqlGraphql.png",
+            fit: BoxFit.cover,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed: Github_Docker_GraphQLPostgreSQLURL,
+                  icon: FaIcon(
+                    FontAwesomeIcons.github,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+          ),
           const ProjectDescriptionWidget(
-              title: "技術面",
-              description:
-                  "・DockerComposeにNodeJSとPostgreSQLの構築を行う。\n・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。\n・JWTトークンによる認証機能を実装し、APIの安全性を高めた。"),
+              title: "プログラミング言語", description: "・JavaScript ・NodeJS"),
+          const SizedBox(
+            height: 12,
+          ),
+          const ProjectDescriptionWidget(
+              title: "リソース", description: "・Docker\n・PostgreSQL\n・GraphQL"),
+          const SizedBox(
+            height: 12,
+          ),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・データベースへのCRUD操作をORMを採用し、可読性と保守性を高めた。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+・GraphQLにより、1つのエンドポイントでAPI操作が可能になる。
+・PosgreSQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。
+'''),
+          buildDivider(),
           const SizedBox(
             height: 80,
           ),

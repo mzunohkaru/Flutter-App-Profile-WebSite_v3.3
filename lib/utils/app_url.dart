@@ -151,6 +151,16 @@ Future<void> Github_Docker_RestAPIPostgreSQLURL() async =>
         ? await launchUrl(github_docker_restapi_posgre)
         : throw 'Could not launchUrl $github_docker_restapi_posgre';
 
+Future<void> Github_Docker_RestAPI_MySQL_PythonURL() async =>
+    await canLaunchUrl(github_docker_restapi_mysql_python)
+        ? await launchUrl(github_docker_restapi_mysql_python)
+        : throw 'Could not launchUrl $github_docker_restapi_mysql_python';
+
+Future<void> Github_Docker_RestAPI_PostgreSQL_PythonURL() async =>
+    await canLaunchUrl(github_docker_restapi_posgre_python)
+        ? await launchUrl(github_docker_restapi_posgre_python)
+        : throw 'Could not launchUrl $github_docker_restapi_posgre_python';
+
 // Youtube App----------------------------------------------------------------
 Future<void> Youtube_URL() async =>
     await canLaunchUrl(youtube)
