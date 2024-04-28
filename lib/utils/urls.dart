@@ -46,6 +46,10 @@ Uri github_aws_rds = Uri.parse(
 Uri github_aws_nodejs = Uri.parse(
     "https://github.com/mzunohkaru/AWS-Sample-Lambda-API/tree/main/nodejs");
 
+// Docker TS RestAPI MySQL
+Uri github_docker_restapi_mysql_ts = Uri.parse(
+    "https://github.com/mzunohkaru/TS-Sample-Node-RestAPI-MySQL-Docker");
+
 // Docker NodeJS GraphQL PostgreSQL
 Uri github_docker_graph_posgre = Uri.parse(
     "https://github.com/mzunohkaru/Node-Sample-GraphQL-PostgreSQL-ORM-Docker");

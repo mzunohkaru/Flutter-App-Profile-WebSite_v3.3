@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ポートフォリオ-水野光琉',
+      title: 'ポートフォリオ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // brightness: Brightness.dark,

@@ -22,6 +22,59 @@ class DesktopBackendProjectsPage extends HookWidget {
           const SizedBox(
             height: 30,
           ),
+
+          Row(
+            children: [
+              Image.asset(
+                "assets/architecture/TypeDockerMysqlRestAPI.png",
+                filterQuality: FilterQuality.medium,
+                fit: BoxFit.fitWidth,
+                width: deviceWidth / 1.8,
+              ),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectDescriptionWidget(
+                          title: "プログラミング言語",
+                          description: "・TypeScript\n・JavaScript ・NodeJS"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProjectDescriptionWidget(
+                          title: "リソース",
+                          description: "・Docker\n・MySQL\n・RestAPI\n・Express"),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      SizedBox(
+                        height: 63,
+                        width: 190,
+                        child: GithubCardButtonWidget(
+                          callback: Github_Docker_RestAPI_MySQL_TSURL,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const ProjectDescriptionWidget(title: "技術面", description: '''
+・言語は、TypeScriptをコンパイルしたNodeJSを使用。
+・DockerComposeにNodeJSとPostgreSQLの構築を行う。
+・JWTトークンによる認証機能を実装し、APIの安全性を高めた。
+・パスワードをハッシュ化して扱うことで、セキュリティレベルを上げた。
+・MySQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。
+'''),
+          buildDivider(),
+
+
           Row(
             children: [
               Image.asset(
@@ -44,7 +97,7 @@ class DesktopBackendProjectsPage extends HookWidget {
                       ),
                       ProjectDescriptionWidget(
                           title: "リソース",
-                          description: "・Docker\n・PostgreSQL\n・GraphQL"),
+                          description: "・Docker\n・PostgreSQL\n・GraphQL\n・Express"),
                       SizedBox(
                         height: 16,
                       ),
@@ -95,7 +148,7 @@ class DesktopBackendProjectsPage extends HookWidget {
                       ),
                       ProjectDescriptionWidget(
                           title: "リソース",
-                          description: "・Docker\n・MySQL\n・RestAPI"),
+                          description: "・Docker\n・MySQL\n・RestAPI\n・Express"),
                       SizedBox(
                         height: 16,
                       ),
@@ -144,7 +197,7 @@ class DesktopBackendProjectsPage extends HookWidget {
                       ),
                       ProjectDescriptionWidget(
                           title: "リソース",
-                          description: "・Docker\n・PostgreSQL\n・RestAPI"),
+                          description: "・Docker\n・PostgreSQL\n・RestAPI\n・Express"),
                       SizedBox(
                         height: 16,
                       ),

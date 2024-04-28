@@ -136,6 +136,11 @@ Future<void> Github_AWS_NodeJSURL() async =>
         : throw 'Could not launchUrl $github_aws_nodejs';
 
 // Docker
+Future<void> Github_Docker_RestAPI_MySQL_TSURL() async =>
+    await canLaunchUrl(github_docker_restapi_mysql_ts)
+        ? await launchUrl(github_docker_restapi_mysql_ts)
+        : throw 'Could not launchUrl $github_docker_restapi_mysql_ts';
+
 Future<void> Github_Docker_GraphQLPostgreSQLURL() async =>
     await canLaunchUrl(github_docker_graph_posgre)
         ? await launchUrl(github_docker_graph_posgre)
