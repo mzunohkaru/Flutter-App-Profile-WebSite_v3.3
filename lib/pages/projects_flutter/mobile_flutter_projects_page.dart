@@ -98,7 +98,7 @@ class MobileFlutterProjectsPage extends HookWidget {
             ),
           ),
           const ProjectDescriptionWidget(
-              title: "アーキテクチャ", description: "・MVVM"),
+              title: "アーキテクチャ", description: "・MVVM + Repository + Usecase"),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
             child: ProjectDescriptionWidget(

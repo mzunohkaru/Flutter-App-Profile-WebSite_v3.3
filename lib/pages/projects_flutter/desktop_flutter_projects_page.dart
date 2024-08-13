@@ -57,7 +57,7 @@ class DesktopFlutterProjectsPage extends HookWidget {
               youtube: true,
               youtubeCallback: Youtube_Flutter_TiktokURL),
           const ProjectDescriptionWidget(
-              title: "アーキテクチャ", description: "・MVVM"),
+              title: "アーキテクチャ", description: "・MVVM + Repository + Usecase"),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 16),
             child: ProjectDescriptionWidget(
