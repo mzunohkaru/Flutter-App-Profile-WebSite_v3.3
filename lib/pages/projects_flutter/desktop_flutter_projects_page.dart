@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_profile_web_33/utils/app_url.dart';
-import 'package:flutter_profile_web_33/utils/constants.dart';
-import 'package:flutter_profile_web_33/widget/github_card_widget.dart';
-import 'package:flutter_profile_web_33/widget/project_description_widget.dart';
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
+import '../../utils/app_url.dart';
+import '../../widget/github_card_widget.dart';
+import '../../widget/project_description_widget.dart';
+import '../../widget/subtitle_widget.dart';
 
-class DesktopFlutterProjectsPage extends HookWidget {
+class DesktopFlutterProjectsPage extends StatelessWidget {
   final double deviceWidth;
   final double deviceHeight;
 
@@ -77,126 +75,10 @@ class DesktopFlutterProjectsPage extends HookWidget {
               description:
                   "・Firebaseに保存した投稿データ (動画) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset(
-                "assets/projects/flutter_translate01.png",
-                filterQuality: FilterQuality.medium,
-                height: deviceHeight / 1.2,
-              ),
-              deviceWidth > 1170
-                  ? const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "AI 翻訳アプリ",
-                          style: kDesktopTitleTextStyle,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          height: 63,
-                          width: 190,
-                          child: GithubCardButtonWidget(
-                            callback: Github_Flutter_TranslationURL,
-                          ),
-                        ),
-                      ],
-                    )
-                  : const SizedBox(),
-              Image.asset(
-                "assets/projects/flutter_translate02.png",
-                filterQuality: FilterQuality.medium,
-                height: deviceHeight / 1.2,
-              ),
-            ],
-          ),
-          deviceWidth > 1170
-              ? const SizedBox()
-              : const Padding(
-                  padding: EdgeInsets.only(top: 24),
-                  child: Row(
-                    children: [
-                      Text(
-                        "AI 翻訳アプリ",
-                        style: kDesktopTitleTextStyle,
-                      ),
-                      Spacer(),
-                      SizedBox(
-                        height: 63,
-                        width: 190,
-                        child: GithubCardButtonWidget(
-                          callback: Github_Flutter_TranslationURL,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-          buildDivider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset(
-                "assets/projects/flutter_memo01.png",
-                filterQuality: FilterQuality.medium,
-                height: deviceHeight / 1.2,
-              ),
-              deviceWidth > 1170
-                  ? const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "メモ帳 顔認証",
-                          style: kDesktopTitleTextStyle,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          height: 63,
-                          width: 190,
-                          child: GithubCardButtonWidget(
-                            callback: Github_Flutter_MemoURL,
-                          ),
-                        ),
-                      ],
-                    )
-                  : const SizedBox(),
-              Image.asset(
-                "assets/projects/flutter_memo02.png",
-                filterQuality: FilterQuality.medium,
-                height: deviceHeight / 1.2,
-              ),
-            ],
-          ),
-          deviceWidth > 1170
-              ? const SizedBox()
-              : const Padding(
-                  padding: EdgeInsets.only(top: 24),
-                  child: Row(
-                    children: [
-                      Text(
-                        "メモ帳 顔認証",
-                        style: kDesktopTitleTextStyle,
-                      ),
-                      Spacer(),
-                      SizedBox(
-                        height: 63,
-                        width: 190,
-                        child: GithubCardButtonWidget(
-                          callback: Github_Flutter_MemoURL,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-          buildDivider(),
           GithubCardWidget(
               deviceHeight: deviceHeight,
-              image: "assets/projects/flutter_food.png",
-              githubCallback: Github_Flutter_FoodURL,
+              image: "assets/projects/flutter_translate.png",
+              githubCallback: Github_Flutter_TranslationURL,
               youtube: false,
               youtubeCallback: null),
           const SizedBox(

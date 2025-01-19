@@ -1,122 +1,131 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import '../../widget/subtitle_widget.dart';
 import 'package:http/http.dart' as http;
 
-class DesktopContactPage extends StatefulWidget {
+class DesktopContactPage extends HookWidget {
+  DesktopContactPage({super.key, required this.deviceWidth});
   final double deviceWidth;
-
-  const DesktopContactPage({super.key, required this.deviceWidth});
-
-  @override
-  State<DesktopContactPage> createState() => _DesktopContactPageState();
-}
-
-class _DesktopContactPageState extends State<DesktopContactPage> {
-  //* コンタクト
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final messageController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
-  void resetContact() {
-    nameController.text = "";
-    emailController.text = "";
-    messageController.text = "";
-  }
-
   @override
-  void dispose() {
-    nameController.dispose();
-    emailController.dispose();
-    messageController.dispose();
-    super.dispose();
-  }
+  Widget build(BuildContext context) {
+    final nameController = useTextEditingController();
+    final emailController = useTextEditingController();
+    final messageController = useTextEditingController();
 
-  @override
-  Widget build(BuildContext context) => GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const SubtitleText(subtitle: "Contact"),
-                const SizedBox(height: 30),
-                // Mail
-                buildTextField(
-                  title: 'お名前',
-                  controller: nameController,
-                  hint: '山田太郎　または　会社名',
-                ),
-                const SizedBox(height: 30),
-                emailTextField(
-                    title: 'メールアドレス',
-                    controller: emailController,
-                    hint: 'example@mail.com'),
-                const SizedBox(height: 30),
-                contentTextField(
-                  title: '内容',
-                  controller: messageController,
-                  hint: '',
-                ),
-                const SizedBox(height: 60),
-                GestureDetector(
-                  onTap: () {
-                    if (_formKey.currentState!.validate()) {
-                      setState(() {
-                        sendEmail(
-                            name: nameController.text,
-                            email: emailController.text,
-                            message: messageController.text);
-                      });
-                      showSendMailDialog();
-                      resetContact();
-                    }
-                  },
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    height: 48,
-                    width: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        gradient: const LinearGradient(colors: [
-                          Color.fromARGB(255, 216, 216, 216),
-                          Color.fromARGB(255, 92, 92, 92),
-                        ]),
-                        boxShadow: [
-                          BoxShadow(
-                              color: const Color.fromARGB(255, 216, 216, 216)
-                                  .withOpacity(.6),
-                              spreadRadius: 1,
-                              blurRadius: 8,
-                              offset: const Offset(3, 3))
-                        ]),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "送信",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+    void resetContact() {
+      nameController.text = "";
+      emailController.text = "";
+      messageController.text = "";
+    }
+
+    void showSendMailDialog() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('送信完了'),
+            titleTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+            content: const Text('お問い合わせありがとうございます。追ってご連絡いたします。'),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('閉じる'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Form(
+        key: _formKey,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SubtitleText(subtitle: "Contact"),
+              const SizedBox(height: 30),
+              // Mail
+              buildTextField(
+                title: 'お名前',
+                controller: nameController,
+                hint: '山田太郎　または　会社名',
+              ),
+              const SizedBox(height: 30),
+              emailTextField(
+                  title: 'メールアドレス',
+                  controller: emailController,
+                  hint: 'example@mail.com'),
+              const SizedBox(height: 30),
+              contentTextField(
+                title: '内容',
+                controller: messageController,
+                hint: '',
+              ),
+              const SizedBox(height: 60),
+              GestureDetector(
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    sendEmail(
+                        name: nameController.text,
+                        email: emailController.text,
+                        message: messageController.text);
+                    showSendMailDialog();
+                    resetContact();
+                  }
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  height: 48,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      gradient: const LinearGradient(colors: [
+                        Color.fromARGB(255, 216, 216, 216),
+                        Color.fromARGB(255, 92, 92, 92),
+                      ]),
+                      boxShadow: [
+                        BoxShadow(
+                            color: const Color.fromARGB(255, 216, 216, 216)
+                                .withOpacity(.6),
+                            spreadRadius: 1,
+                            blurRadius: 8,
+                            offset: const Offset(3, 3))
+                      ]),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "送信",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-      );
+      ),
+    );
+  }
 
   //* コンタクト
-  Future sendEmail(
+  Future<void> sendEmail(
       {required String name,
       required String email,
       required String message}) async {
@@ -167,7 +176,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
             height: 10,
           ),
           SizedBox(
-            width: widget.deviceWidth / 2.4,
+            width: deviceWidth / 2.4,
             child: TextFormField(
               autofocus: true,
               validator: (value) {
@@ -222,7 +231,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
             height: 10,
           ),
           SizedBox(
-            width: widget.deviceWidth / 2.4,
+            width: deviceWidth / 2.4,
             child: TextFormField(
               controller: controller,
               decoration: InputDecoration(
@@ -279,7 +288,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
             height: 10,
           ),
           SizedBox(
-            width: widget.deviceWidth / 2.4,
+            width: deviceWidth / 2.4,
             child: TextFormField(
                 controller: controller,
                 maxLines: maxLines,
@@ -303,27 +312,4 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           )
         ],
       );
-
-  void showSendMailDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('送信完了'),
-          titleTextStyle: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
-          content: const Text('お問い合わせありがとうございます。追ってご連絡いたします。'),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('閉じる'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
 }

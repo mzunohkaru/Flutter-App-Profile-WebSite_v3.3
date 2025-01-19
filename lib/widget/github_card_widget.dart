@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class GithubCardWidget extends HookWidget {
+class GithubCardWidget extends StatelessWidget {
   final double deviceHeight;
   final String image;
   final VoidCallback githubCallback;
   final bool youtube;
   final VoidCallback? youtubeCallback;
 
-  const GithubCardWidget({
+  const   GithubCardWidget({
     super.key,
     required this.deviceHeight,
     required this.image,

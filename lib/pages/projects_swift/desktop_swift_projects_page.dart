@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
-import 'package:flutter_profile_web_33/utils/app_url.dart';
-import 'package:flutter_profile_web_33/widget/github_card_widget.dart';
-import 'package:flutter_profile_web_33/widget/project_description_widget.dart';
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
+import '../projects_flutter/desktop_flutter_projects_page.dart';
+import '../../utils/app_url.dart';
+import '../../widget/github_card_widget.dart';
+import '../../widget/project_description_widget.dart';
+import '../../widget/subtitle_widget.dart';
 
-class DesktopSwiftProjectsPage extends HookWidget {
+class DesktopSwiftProjectsPage extends StatelessWidget {
   final double deviceHeight;
 
   const DesktopSwiftProjectsPage({super.key, required this.deviceHeight});

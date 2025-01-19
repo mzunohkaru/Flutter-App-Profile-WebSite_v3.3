@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_profile_web_33/utils/constants.dart';
+import '../utils/constants.dart';
 
-class ProjectDescriptionWidget extends HookWidget {
+class ProjectDescriptionWidget extends StatelessWidget {
   final String title;
   final String description;
 

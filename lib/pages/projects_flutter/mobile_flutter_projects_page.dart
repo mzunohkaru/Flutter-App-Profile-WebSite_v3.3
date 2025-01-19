@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
-import 'package:flutter_profile_web_33/utils/constants.dart';
-import 'package:flutter_profile_web_33/widget/project_description_widget.dart';
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
-import 'package:flutter_profile_web_33/utils/app_url.dart';
+import '../../utils/constants.dart';
+import '../../widget/project_description_widget.dart';
+import '../../widget/subtitle_widget.dart';
+import '../../utils/app_url.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class MobileFlutterProjectsPage extends HookWidget {
+import 'desktop_flutter_projects_page.dart';
+
+class MobileFlutterProjectsPage extends StatelessWidget {
   const MobileFlutterProjectsPage({super.key});
 
   @override
@@ -142,32 +142,6 @@ class MobileFlutterProjectsPage extends HookWidget {
                 ),
                 const IconButton(
                   onPressed: Github_Flutter_TranslationURL,
-                  icon: FaIcon(
-                    FontAwesomeIcons.github,
-                    size: 40,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
-          ),
-          buildDivider(),
-          Image.asset(
-            "assets/projects/flutter_food.png",
-            fit: BoxFit.cover,
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "デリバリーアプリ",
-                  style: kMobileTitleTextStyle,
-                ),
-                Spacer(),
-                IconButton(
-                  onPressed: Github_Flutter_FoodURL,
                   icon: FaIcon(
                     FontAwesomeIcons.github,
                     size: 40,
