@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
+import 'package:flutter_profile_web_33/ui/projects_flutter/desktop_flutter_projects_page.dart';
 import 'package:flutter_profile_web_33/utils/app_url.dart';
 import 'package:flutter_profile_web_33/utils/constants.dart';
 import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
