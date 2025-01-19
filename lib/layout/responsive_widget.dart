@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../model/enum/genre.dart';
 import '../ui/contacts/desktop_contact_page.dart';
 import '../ui/contacts/mobile_contact_page.dart';
 import '../ui/policys/desktop_policy_page.dart';
@@ -24,7 +25,6 @@ class SideMenuWidget extends StatelessWidget {
     required SidebarXController controller,
   })  : _controller = controller,
         super(key: key);
-
   final SidebarXController _controller;
 
   @override
@@ -82,52 +82,52 @@ class SideMenuWidget extends StatelessWidget {
           height: 100,
         );
       },
-      items: const [
+      items:  [
         SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.unity,
             color: Colors.grey,
-          ),
-          label: 'Unity',
+            ),
+            label: Genre.unity.name,
         ),
         SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.swift,
             color: Colors.blue,
           ),
-          label: 'Swift UI',
+          label: Genre.swift.name,
         ),
         SidebarXItem(
           iconWidget: FlutterLogo(),
-          label: 'Flutter',
+          label: Genre.flutter.name,
         ),
         SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.aws,
             color: Colors.orange,
           ),
-          label: 'AWS',
+          label: Genre.aws.name,
         ),
         SidebarXItem(
           iconWidget: FaIcon(
             FontAwesomeIcons.docker,
             color: Colors.blue,
           ),
-          label: 'Docker',
+          label: Genre.docker.name,
         ),
         SidebarXItem(
           iconWidget: Icon(
             Icons.shield,
             color: Colors.grey,
           ),
-          label: 'Policy',
+          label: Genre.policy.name,
         ),
         SidebarXItem(
           iconWidget: Icon(
             Icons.mail,
             color: Colors.grey,
           ),
-          label: 'Contact',
+          label: Genre.contact.name,
         )
       ],
     );
