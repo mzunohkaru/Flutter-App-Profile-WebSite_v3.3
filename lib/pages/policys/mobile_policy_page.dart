@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
+import '../../widget/subtitle_widget.dart';
 
 class MobilePolicyPage extends StatefulWidget {
   bool isJP;
   double deviceWidth, deviceHeight;
 
   MobilePolicyPage({
-    Key? key,
+    super.key,
     required this.isJP,
     required this.deviceWidth,
     required this.deviceHeight,
-  }) : super(key: key);
+  });
 
   @override
   State<MobilePolicyPage> createState() => _MobilePolicyPageState();

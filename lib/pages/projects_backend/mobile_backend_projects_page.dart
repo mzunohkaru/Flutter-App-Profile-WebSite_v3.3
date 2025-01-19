@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
-import 'package:flutter_profile_web_33/utils/app_url.dart';
-import 'package:flutter_profile_web_33/utils/urls.dart';
-import 'package:flutter_profile_web_33/widget/project_description_widget.dart';
-import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../utils/app_url.dart';
+import '../../widget/project_description_widget.dart';
+import '../../widget/subtitle_widget.dart';
+
+import '../projects_flutter/desktop_flutter_projects_page.dart';
 
 class MobileBackendProjectsPage extends StatelessWidget {
   const MobileBackendProjectsPage({super.key});

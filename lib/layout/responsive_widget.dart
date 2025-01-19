@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_profile_web_33/pages/contacts/desktop_contact_page.dart';
-import 'package:flutter_profile_web_33/pages/contacts/mobile_contact_page.dart';
-import 'package:flutter_profile_web_33/pages/policys/desktop_policy_page.dart';
-import 'package:flutter_profile_web_33/pages/policys/mobile_policy_page.dart';
-import 'package:flutter_profile_web_33/pages/products/desktop_products_page.dart';
-import 'package:flutter_profile_web_33/pages/products/mobile_products_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_aws/desktop_aws_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_aws/mobile_aws_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_backend/desktop_backend_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_backend/mobile_backend_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/desktop_flutter_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_flutter/mobile_flutter_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_swift/desktop_swift_projects_page.dart';
-import 'package:flutter_profile_web_33/pages/projects_swift/mobile_swift_projects_page.dart';
-import 'package:flutter_profile_web_33/utils/constants.dart';
+
+import '../pages/contacts/desktop_contact_page.dart';
+import '../pages/contacts/mobile_contact_page.dart';
+import '../pages/policys/desktop_policy_page.dart';
+import '../pages/policys/mobile_policy_page.dart';
+import '../pages/products/desktop_products_page.dart';
+import '../pages/products/mobile_products_page.dart';
+import '../pages/projects_aws/desktop_aws_projects_page.dart';
+import '../pages/projects_aws/mobile_aws_projects_page.dart';
+import '../pages/projects_backend/desktop_backend_projects_page.dart';
+import '../pages/projects_backend/mobile_backend_projects_page.dart';
+import '../pages/projects_flutter/desktop_flutter_projects_page.dart';
+import '../pages/projects_flutter/mobile_flutter_projects_page.dart';
+import '../pages/projects_swift/desktop_swift_projects_page.dart';
+import '../pages/projects_swift/mobile_swift_projects_page.dart';
+import '../utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 
