@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-import 'layout/responsive_widget.dart';
+import 'ui/layout/responsive_widget.dart';
 import 'utils/app_url.dart';
 import 'utils/constants.dart';
 

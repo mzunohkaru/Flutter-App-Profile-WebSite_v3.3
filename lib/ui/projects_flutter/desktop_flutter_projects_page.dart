@@ -22,11 +22,11 @@ class DesktopFlutterProjectsPage extends StatelessWidget {
             height: 30,
           ),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/flutter_instagram.png",
               githubCallback: Github_Flutter_InstagramURL,
               youtube: true,
-              youtubeCallback: Youtube_Flutter_InstagramURL),
+              youtubeCallback: Youtube_Flutter_InstagramURL,
+              date: "2024/6/20"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM + Repository + Usecase"),
           const Padding(
@@ -49,11 +49,11 @@ class DesktopFlutterProjectsPage extends StatelessWidget {
                   "・Firebaseに保存した投稿データ (画像) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/flutter_tiktok.png",
               githubCallback: Github_Flutter_TiktokURL,
               youtube: true,
-              youtubeCallback: Youtube_Flutter_TiktokURL),
+              youtubeCallback: Youtube_Flutter_TiktokURL,
+              date: "2024/5/5"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM + Repository + Usecase"),
           const Padding(
@@ -76,11 +76,11 @@ class DesktopFlutterProjectsPage extends StatelessWidget {
                   "・Firebaseに保存した投稿データ (動画) をRiverpodで取得、監視する。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)\n・キャッシュを使用することでサーバーの負担を軽減、レイテンシーの低下を実装。"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/flutter_translate.png",
               githubCallback: Github_Flutter_TranslationURL,
               youtube: false,
-              youtubeCallback: null),
+              youtubeCallback: null,
+              date: "2024/2/28"),
           const SizedBox(
             height: 80,
           ),

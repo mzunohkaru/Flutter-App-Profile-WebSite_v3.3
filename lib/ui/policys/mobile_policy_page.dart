@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 import '../../widget/subtitle_widget.dart';
 
 class MobilePolicyPage extends StatefulWidget {
-  bool isJP;
-  double deviceWidth, deviceHeight;
+  final bool isJP;
 
   MobilePolicyPage({
     super.key,
     required this.isJP,
-    required this.deviceWidth,
-    required this.deviceHeight,
   });
 
   @override

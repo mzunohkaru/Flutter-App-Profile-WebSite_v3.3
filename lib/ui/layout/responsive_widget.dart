@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../model/enum/genre.dart';
-import '../ui/contacts/desktop_contact_page.dart';
-import '../ui/contacts/mobile_contact_page.dart';
-import '../ui/policys/desktop_policy_page.dart';
-import '../ui/policys/mobile_policy_page.dart';
-import '../ui/products/desktop_products_page.dart';
-import '../ui/products/mobile_products_page.dart';
-import '../ui/projects_aws/desktop_aws_projects_page.dart';
-import '../ui/projects_aws/mobile_aws_projects_page.dart';
-import '../ui/projects_backend/desktop_backend_projects_page.dart';
-import '../ui/projects_backend/mobile_backend_projects_page.dart';
-import '../ui/projects_flutter/desktop_flutter_projects_page.dart';
-import '../ui/projects_flutter/mobile_flutter_projects_page.dart';
-import '../ui/projects_swift/desktop_swift_projects_page.dart';
-import '../ui/projects_swift/mobile_swift_projects_page.dart';
-import '../utils/constants.dart';
+import '../../model/enum/genre.dart';
+import '../policys/desktop_policy_page.dart';
+import '../policys/mobile_policy_page.dart';
+import '../products/desktop_products_page.dart';
+import '../products/mobile_products_page.dart';
+import '../projects_aws/desktop_aws_projects_page.dart';
+import '../projects_aws/mobile_aws_projects_page.dart';
+import '../projects_backend/desktop_backend_projects_page.dart';
+import '../projects_backend/mobile_backend_projects_page.dart';
+import '../projects_flutter/desktop_flutter_projects_page.dart';
+import '../projects_flutter/mobile_flutter_projects_page.dart';
+import '../projects_swift/desktop_swift_projects_page.dart';
+import '../projects_swift/mobile_swift_projects_page.dart';
+import '../../utils/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -122,13 +120,13 @@ class SideMenuWidget extends StatelessWidget {
           ),
           label: Genre.policy.name,
         ),
-        SidebarXItem(
-          iconWidget: Icon(
-            Icons.mail,
-            color: Colors.grey,
-          ),
-          label: Genre.contact.name,
-        )
+        // SidebarXItem(
+        //   iconWidget: Icon(
+        //     Icons.mail,
+        //     color: Colors.grey,
+        //   ),
+        //   label: Genre.contact.name,
+        // )
       ],
     );
   }
@@ -191,15 +189,12 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
                 : DesktopBackendProjectsPage(deviceWidth: deviceWidth);
           case 5:
             return widget.mobile
-                ? MobilePolicyPage(
-                    isJP: true,
-                    deviceWidth: deviceWidth,
-                    deviceHeight: deviceHeight)
+                ? MobilePolicyPage(isJP: true)
                 : const DesktopPolicyPage();
-          case 6:
-            return widget.mobile
-                ? const MobileContactPage()
-                : DesktopContactPage(deviceWidth: deviceWidth);
+          // case 6:
+          //   return widget.mobile
+          //       ? const MobileContactPage()
+          //       : DesktopContactPage(deviceWidth: deviceWidth);
           default:
             return const SizedBox();
         }

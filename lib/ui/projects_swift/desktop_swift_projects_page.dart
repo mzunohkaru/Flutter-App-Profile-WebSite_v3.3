@@ -21,11 +21,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
             height: 30,
           ),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/swiftui_instagram.png",
               githubCallback: Github_Swift_InstagramURL,
               youtube: true,
-              youtubeCallback: Youtube_Swift_InstagramURL),
+              youtubeCallback: Youtube_Swift_InstagramURL,
+              date: "2024/2/13"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const Padding(
@@ -41,11 +41,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
                   "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/swiftui_tiktok.png",
               githubCallback: Github_Swift_TiktokURL,
               youtube: true,
-              youtubeCallback: Youtube_Swift_TiktokURL),
+              youtubeCallback: Youtube_Swift_TiktokURL,
+              date: "2024/2/11"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const Padding(
@@ -61,11 +61,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
                   "・ユーザーセッション情報などシングルトン化したクラスで管理する。これにより、アプリ全体で整合性の高いデータを使用することができる。\n・取得したデータをアプリ側の配列に格納し操作することで、Firebaseの呼び出し回数を減らし、コストを節約する。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。\n・重複せず最適化されたデータベース構成を実現。(ER図は、Github Readmeをご覧ください。)"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/swiftui_threads.png",
               githubCallback: Github_Swift_ThreadURL,
               youtube: true,
-              youtubeCallback: Youtube_Swift_ThreadURL),
+              youtubeCallback: Youtube_Swift_ThreadURL,
+              date: "2024/2/1"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const Padding(
@@ -84,12 +84,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
           ),
           buildDivider(),
           GithubCardWidget(
-            deviceHeight: deviceHeight,
-            image: "assets/projects/swiftui_messanger.png",
-            githubCallback: Github_Swift_MessangerURL,
-            youtube: false,
-            youtubeCallback: null,
-          ),
+              image: "assets/projects/swiftui_messanger.png",
+              githubCallback: Github_Swift_MessangerURL,
+              youtube: false,
+              youtubeCallback: null,
+              date: "2024/2/5"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const SizedBox(
@@ -101,11 +100,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
                   "・ユーザー認証\n・プロフィール（名前、プロフィール画像など）の編集\n・チャット（テキスト、画像、リンク）送信、受信\n・リアルタイムでチャットの取得"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/swiftui_airbnb.png",
               githubCallback: Github_Swift_AirbnbURL,
               youtube: true,
-              youtubeCallback: Youtube_Swift_AirbnbURL),
+              youtubeCallback: Youtube_Swift_AirbnbURL,
+              date: "2024/1/20"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const SizedBox(
@@ -117,11 +116,11 @@ class DesktopSwiftProjectsPage extends StatelessWidget {
                   "・豊富なアニメーションと洗礼されたUIUX。\n・マップの確認と操作。\n・動的なデータをViewModelで管理するため、ViewやServiceクラスの拡張性が上がる。"),
           buildDivider(),
           GithubCardWidget(
-              deviceHeight: deviceHeight,
               image: "assets/projects/swiftui_crypto.png",
               githubCallback: Github_Swift_CryptoURL,
               youtube: true,
-              youtubeCallback: Youtube_Swift_CryptoURL),
+              youtubeCallback: Youtube_Swift_CryptoURL,
+              date: "2024/2/21"),
           const ProjectDescriptionWidget(
               title: "アーキテクチャ", description: "・MVVM"),
           const SizedBox(
