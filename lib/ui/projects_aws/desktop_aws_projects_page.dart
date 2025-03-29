@@ -6,12 +6,13 @@ import '../../widget/project_description_widget.dart';
 import '../../widget/subtitle_widget.dart';
 
 class DesktopAwsProjectsPage extends StatelessWidget {
-  final double deviceHeight;
-
-  const DesktopAwsProjectsPage({super.key, required this.deviceHeight});
+  const DesktopAwsProjectsPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

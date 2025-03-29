@@ -7,12 +7,12 @@ import '../../widget/project_description_widget.dart';
 import '../../widget/subtitle_widget.dart';
 
 class DesktopBackendProjectsPage extends StatelessWidget {
-  final double deviceWidth;
-
-  const DesktopBackendProjectsPage({super.key, required this.deviceWidth});
+  const DesktopBackendProjectsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,6 @@ class DesktopBackendProjectsPage extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-
           Row(
             children: [
               Image.asset(
@@ -72,8 +71,6 @@ class DesktopBackendProjectsPage extends StatelessWidget {
 ・MySQLのデータベースには、UsersテーブルとPostsテーブルがある。これらは、user_idにより紐づいている。
 '''),
           buildDivider(),
-
-
           Row(
             children: [
               Image.asset(
@@ -96,7 +93,8 @@ class DesktopBackendProjectsPage extends StatelessWidget {
                       ),
                       ProjectDescriptionWidget(
                           title: "リソース",
-                          description: "・Docker\n・PostgreSQL\n・GraphQL\n・Express"),
+                          description:
+                              "・Docker\n・PostgreSQL\n・GraphQL\n・Express"),
                       SizedBox(
                         height: 16,
                       ),
@@ -196,7 +194,8 @@ class DesktopBackendProjectsPage extends StatelessWidget {
                       ),
                       ProjectDescriptionWidget(
                           title: "リソース",
-                          description: "・Docker\n・PostgreSQL\n・RestAPI\n・Express"),
+                          description:
+                              "・Docker\n・PostgreSQL\n・RestAPI\n・Express"),
                       SizedBox(
                         height: 16,
                       ),

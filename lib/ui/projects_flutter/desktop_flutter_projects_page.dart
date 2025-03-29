@@ -5,11 +5,9 @@ import '../../widget/project_description_widget.dart';
 import '../../widget/subtitle_widget.dart';
 
 class DesktopFlutterProjectsPage extends StatelessWidget {
-  final double deviceWidth;
-  final double deviceHeight;
-
-  const DesktopFlutterProjectsPage(
-      {super.key, required this.deviceWidth, required this.deviceHeight});
+  const DesktopFlutterProjectsPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -4,19 +4,11 @@ import 'package:flutter_profile_web_33/utils/app_url.dart';
 import 'package:flutter_profile_web_33/utils/constants.dart';
 import 'package:flutter_profile_web_33/widget/subtitle_widget.dart';
 
-class MobileProductPage extends StatefulWidget {
-  final double deviceWidth;
-  final double deviceHeight;
-
-  const MobileProductPage(
-      {super.key, required this.deviceWidth, required this.deviceHeight});
-  @override
-  State<MobileProductPage> createState() => _MobileProductPageState();
-}
-
-class _MobileProductPageState extends State<MobileProductPage> {
+class MobileProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -31,7 +23,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                 alignment: Alignment.bottomCenter,
                 children: [
                   SizedBox(
-                    width: widget.deviceWidth / 1.2,
+                    width: deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui5.png",
                     ),
@@ -42,7 +34,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
-                        width: widget.deviceWidth / 1.6,
+                        width: deviceWidth / 1.6,
                         height: 140,
                         margin: const EdgeInsets.all(10.0),
                         child: const Column(
@@ -69,16 +61,18 @@ class _MobileProductPageState extends State<MobileProductPage> {
               const SizedBox(
                 height: 30,
               ),
-              buildStoreButton(
-                  "assets/utils/apple_store.png", Apple_Terausa_EscURL),
-              buildStoreButton(
-                  "assets/utils/play_store.png", Android_Terausa_EscURL),
+              _StoreButton(
+                  image: "assets/utils/apple_store.png",
+                  onPressed: () => Apple_Terausa_EscURL()),
+              _StoreButton(
+                  image: "assets/utils/play_store.png",
+                  onPressed: () => Android_Terausa_EscURL()),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   SizedBox(
-                    width: widget.deviceWidth / 1.2,
+                    width: deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui6.png",
                     ),
@@ -89,7 +83,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
-                        width: widget.deviceWidth / 1.6,
+                        width: deviceWidth / 1.6,
                         height: 140,
                         margin: const EdgeInsets.all(10.0),
                         child: const Column(
@@ -118,14 +112,15 @@ class _MobileProductPageState extends State<MobileProductPage> {
               const SizedBox(
                 height: 30,
               ),
-              buildStoreButton(
-                  "assets/utils/apple_store.png", Apple_Aburaya_EscURL),
+              _StoreButton(
+                  image: "assets/utils/apple_store.png",
+                  onPressed: () => Apple_Aburaya_EscURL()),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   SizedBox(
-                    width: widget.deviceWidth / 1.2,
+                    width: deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui7.png",
                     ),
@@ -136,7 +131,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
-                        width: widget.deviceWidth / 1.6,
+                        width: deviceWidth / 1.6,
                         height: 170,
                         margin: const EdgeInsets.all(10.0),
                         child: const Column(
@@ -164,16 +159,18 @@ class _MobileProductPageState extends State<MobileProductPage> {
               const SizedBox(
                 height: 30,
               ),
-              buildStoreButton(
-                  "assets/utils/apple_store.png", Apple_Tabidachi_EscURL),
-              buildStoreButton(
-                  "assets/utils/play_store.png", Android_Tabidachi_EscURL),
+              _StoreButton(
+                  image: "assets/utils/apple_store.png",
+                  onPressed: () => Apple_Tabidachi_EscURL()),
+              _StoreButton(
+                  image: "assets/utils/play_store.png",
+                  onPressed: () => Android_Tabidachi_EscURL()),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   SizedBox(
-                    width: widget.deviceWidth / 1.2,
+                    width: deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui8.png",
                     ),
@@ -184,7 +181,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
-                        width: widget.deviceWidth / 1.6,
+                        width: deviceWidth / 1.6,
                         height: 200,
                         margin: const EdgeInsets.all(10.0),
                         child: const Column(
@@ -213,14 +210,15 @@ class _MobileProductPageState extends State<MobileProductPage> {
               const SizedBox(
                 height: 30,
               ),
-              buildStoreButton(
-                  "assets/utils/apple_store.png", Apple_Fairy_EscURL),
+              _StoreButton(
+                  image: "assets/utils/apple_store.png",
+                  onPressed: () => Apple_Fairy_EscURL()),
               buildDivider(),
               Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   SizedBox(
-                    width: widget.deviceWidth / 1.2,
+                    width: deviceWidth / 1.2,
                     child: Image.asset(
                       "assets/app/ui9.png",
                     ),
@@ -231,7 +229,7 @@ class _MobileProductPageState extends State<MobileProductPage> {
                       color: Colors.white54.withOpacity(0.3),
                       elevation: 36,
                       child: Container(
-                        width: widget.deviceWidth / 1.6,
+                        width: deviceWidth / 1.6,
                         height: 140,
                         margin: const EdgeInsets.all(10.0),
                         child: const Column(
@@ -258,10 +256,12 @@ class _MobileProductPageState extends State<MobileProductPage> {
               const SizedBox(
                 height: 30,
               ),
-              buildStoreButton(
-                  "assets/utils/apple_store.png", Apple_Tanabata_EscURL),
-              buildStoreButton(
-                  "assets/utils/play_store.png", Android_Tanabata_EscURL),
+              _StoreButton(
+                  image: "assets/utils/apple_store.png",
+                  onPressed: () => Apple_Tanabata_EscURL()),
+              _StoreButton(
+                  image: "assets/utils/play_store.png",
+                  onPressed: () => Android_Tanabata_EscURL()),
               const SizedBox(
                 height: 80,
               )
@@ -271,15 +271,24 @@ class _MobileProductPageState extends State<MobileProductPage> {
       ),
     );
   }
+}
 
-  //* プロダクト
-  InkWell buildStoreButton(String image, VoidCallback onPressed) {
+class _StoreButton extends StatelessWidget {
+  const _StoreButton({required this.image, required this.onPressed});
+
+  final String image;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+
     return InkWell(
       onTap: () {
         onPressed();
       },
       child: Container(
-        width: widget.deviceWidth / 2.7,
+        width: deviceWidth / 2.7,
         margin: const EdgeInsets.all(10.0),
         child: Center(
           child: Image.asset(

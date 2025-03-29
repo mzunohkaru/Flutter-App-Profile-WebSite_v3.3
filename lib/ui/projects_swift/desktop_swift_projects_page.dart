@@ -6,9 +6,7 @@ import '../../widget/project_description_widget.dart';
 import '../../widget/subtitle_widget.dart';
 
 class DesktopSwiftProjectsPage extends StatelessWidget {
-  final double deviceHeight;
-
-  const DesktopSwiftProjectsPage({super.key, required this.deviceHeight});
+  const DesktopSwiftProjectsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

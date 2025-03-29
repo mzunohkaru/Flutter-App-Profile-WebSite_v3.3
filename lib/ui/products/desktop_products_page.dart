@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_web_33/gen/assets.gen.dart';
 import '../../utils/app_url.dart';
 import '../../utils/constants.dart';
 import '../../widget/subtitle_widget.dart';
 
 class DesktopProductPage extends StatelessWidget {
-  final double deviceWidth;
-  final double deviceHeight;
+  const DesktopProductPage({super.key});
 
-  const DesktopProductPage(
-      {super.key, required this.deviceWidth, required this.deviceHeight});
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
+    final deviceWidth = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -25,9 +26,7 @@ class DesktopProductPage extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: deviceHeight / 1.2,
-                    child: Image.asset(
-                      "assets/app/ui5.png",
-                    ),
+                    child: Image.asset(Assets.app.ui5.path),
                   ),
                 ],
               ),
@@ -49,13 +48,15 @@ class DesktopProductPage extends StatelessWidget {
                         const SizedBox(
                           height: 60,
                         ),
-                        buildStoreButton("assets/utils/apple_store.png",
-                            Apple_Terausa_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/apple_store.png",
+                            onPressed: () => Apple_Terausa_EscURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        buildStoreButton("assets/utils/play_store.png",
-                            Android_Terausa_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/play_store.png",
+                            onPressed: () => Android_Terausa_EscURL),
                       ],
                     ),
                   ),
@@ -87,8 +88,9 @@ class DesktopProductPage extends StatelessWidget {
                         const SizedBox(
                           height: 60,
                         ),
-                        buildStoreButton("assets/utils/apple_store.png",
-                            Apple_Aburaya_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/apple_store.png",
+                            onPressed: () => Apple_Aburaya_EscURL),
                       ],
                     ),
                   ),
@@ -141,13 +143,15 @@ class DesktopProductPage extends StatelessWidget {
                         const SizedBox(
                           height: 60,
                         ),
-                        buildStoreButton("assets/utils/apple_store.png",
-                            Apple_Tabidachi_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/apple_store.png",
+                            onPressed: () => Apple_Tabidachi_EscURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        buildStoreButton("assets/utils/play_store.png",
-                            Android_Tabidachi_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/play_store.png",
+                            onPressed: () => Android_Tabidachi_EscURL),
                       ],
                     ),
                   ),
@@ -180,8 +184,9 @@ class DesktopProductPage extends StatelessWidget {
                         const SizedBox(
                           height: 60,
                         ),
-                        buildStoreButton(
-                            "assets/utils/apple_store.png", Apple_Fairy_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/apple_store.png",
+                            onPressed: () => Apple_Fairy_EscURL),
                       ],
                     ),
                   ),
@@ -235,13 +240,15 @@ class DesktopProductPage extends StatelessWidget {
                         const SizedBox(
                           height: 60,
                         ),
-                        buildStoreButton("assets/utils/apple_store.png",
-                            Apple_Tanabata_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/apple_store.png",
+                            onPressed: () => Apple_Tanabata_EscURL),
                         const SizedBox(
                           height: 12,
                         ),
-                        buildStoreButton("assets/utils/play_store.png",
-                            Android_Tanabata_EscURL),
+                        _StoreButton(
+                            image: "assets/utils/play_store.png",
+                            onPressed: () => Android_Tanabata_EscURL),
                       ],
                     ),
                   ),
@@ -256,43 +263,16 @@ class DesktopProductPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget buildProductCard(String image, VoidCallback iosPressed,
-      VoidCallback androidPressed, bool android) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      children: [
-        Card(
-          elevation: 20,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: deviceHeight / 1.2,
-              child: Image.asset(
-                image,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 60,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildStoreButton("assets/utils/apple_store.png", iosPressed),
-              android
-                  ? buildStoreButton(
-                      "assets/utils/play_store.png", androidPressed)
-                  : const SizedBox(),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
+class _StoreButton extends StatelessWidget {
+  const _StoreButton({required this.image, required this.onPressed});
 
-  //* プロダクト
-  Widget buildStoreButton(String image, VoidCallback onPressed) {
+  final String image;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         onPressed();

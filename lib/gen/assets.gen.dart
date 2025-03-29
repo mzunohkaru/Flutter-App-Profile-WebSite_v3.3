@@ -40,11 +40,13 @@ class $AssetsArchitectureGen {
 
   /// File path: assets/architecture/NodeDockerPostgresqlGraphql.png
   AssetGenImage get nodeDockerPostgresqlGraphql => const AssetGenImage(
-      'assets/architecture/NodeDockerPostgresqlGraphql.png');
+    'assets/architecture/NodeDockerPostgresqlGraphql.png',
+  );
 
   /// File path: assets/architecture/NodeDockerPostgresqlRestAPI.png
   AssetGenImage get nodeDockerPostgresqlRestAPI => const AssetGenImage(
-      'assets/architecture/NodeDockerPostgresqlRestAPI.png');
+    'assets/architecture/NodeDockerPostgresqlRestAPI.png',
+  );
 
   /// File path: assets/architecture/PythonDockerMysqlRestAPI.png
   AssetGenImage get pythonDockerMysqlRestAPI =>
@@ -52,7 +54,8 @@ class $AssetsArchitectureGen {
 
   /// File path: assets/architecture/PythonDockerPostgresqlRestAPI.png
   AssetGenImage get pythonDockerPostgresqlRestAPI => const AssetGenImage(
-      'assets/architecture/PythonDockerPostgresqlRestAPI.png');
+    'assets/architecture/PythonDockerPostgresqlRestAPI.png',
+  );
 
   /// File path: assets/architecture/TypeDockerMysqlRestAPI.png
   AssetGenImage get typeDockerMysqlRestAPI =>
@@ -84,19 +87,19 @@ class $AssetsArchitectureGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        nodeDockerMysqlRestAPI,
-        nodeDockerPostgresqlGraphql,
-        nodeDockerPostgresqlRestAPI,
-        pythonDockerMysqlRestAPI,
-        pythonDockerPostgresqlRestAPI,
-        typeDockerMysqlRestAPI,
-        typeDockerPosgresqlRestAPI,
-        architecture1,
-        architecture3,
-        architecture9,
-        architectureNode,
-        architectureUnity
-      ];
+    nodeDockerMysqlRestAPI,
+    nodeDockerPostgresqlGraphql,
+    nodeDockerPostgresqlRestAPI,
+    pythonDockerMysqlRestAPI,
+    pythonDockerPostgresqlRestAPI,
+    typeDockerMysqlRestAPI,
+    typeDockerPosgresqlRestAPI,
+    architecture1,
+    architecture3,
+    architecture9,
+    architectureNode,
+    architectureUnity,
+  ];
 }
 
 class $AssetsProjectsGen {
@@ -160,21 +163,21 @@ class $AssetsProjectsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        flutterFood,
-        flutterInstagram,
-        flutterMemo01,
-        flutterMemo02,
-        flutterTiktok,
-        flutterTranslate,
-        flutterTranslate01,
-        flutterTranslate02,
-        swiftuiAirbnb,
-        swiftuiCrypto,
-        swiftuiInstagram,
-        swiftuiMessanger,
-        swiftuiThreads,
-        swiftuiTiktok
-      ];
+    flutterFood,
+    flutterInstagram,
+    flutterMemo01,
+    flutterMemo02,
+    flutterTiktok,
+    flutterTranslate,
+    flutterTranslate01,
+    flutterTranslate02,
+    swiftuiAirbnb,
+    swiftuiCrypto,
+    swiftuiInstagram,
+    swiftuiMessanger,
+    swiftuiThreads,
+    swiftuiTiktok,
+  ];
 }
 
 class $AssetsUtilsGen {
@@ -197,12 +200,16 @@ class $AssetsUtilsGen {
       const AssetGenImage('assets/utils/play_storeicon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [appleStore, appleStoreIcon, playStore, playStoreicon];
+  List<AssetGenImage> get values => [
+    appleStore,
+    appleStoreIcon,
+    playStore,
+    playStoreicon,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsAppGen app = $AssetsAppGen();
   static const $AssetsArchitectureGen architecture = $AssetsArchitectureGen();
@@ -211,11 +218,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -243,7 +246,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -275,15 +278,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

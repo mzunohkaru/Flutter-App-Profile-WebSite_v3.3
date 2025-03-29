@@ -19,8 +19,7 @@ import 'package:sidebarx/sidebarx.dart';
 
 class SideMenuWidget extends StatelessWidget {
   const SideMenuWidget({
-    Key? key,
-    required SidebarXController controller,
+    required SidebarXController controller, Key? key,
   })  : _controller = controller,
         super(key: key);
   final SidebarXController _controller;
@@ -80,41 +79,41 @@ class SideMenuWidget extends StatelessWidget {
           height: 100,
         );
       },
-      items:  [
+      items: [
         SidebarXItem(
-          iconWidget: FaIcon(
+          iconWidget: const FaIcon(
             FontAwesomeIcons.unity,
             color: Colors.grey,
-            ),
-            label: Genre.unity.name,
+          ),
+          label: Genre.unity.name,
         ),
         SidebarXItem(
-          iconWidget: FaIcon(
+          iconWidget: const FaIcon(
             FontAwesomeIcons.swift,
             color: Colors.blue,
           ),
           label: Genre.swift.name,
         ),
         SidebarXItem(
-          iconWidget: FlutterLogo(),
+          iconWidget: const FlutterLogo(),
           label: Genre.flutter.name,
         ),
         SidebarXItem(
-          iconWidget: FaIcon(
+          iconWidget: const FaIcon(
             FontAwesomeIcons.aws,
             color: Colors.orange,
           ),
           label: Genre.aws.name,
         ),
         SidebarXItem(
-          iconWidget: FaIcon(
+          iconWidget: const FaIcon(
             FontAwesomeIcons.docker,
             color: Colors.blue,
           ),
           label: Genre.docker.name,
         ),
         SidebarXItem(
-          iconWidget: Icon(
+          iconWidget: const Icon(
             Icons.shield,
             color: Colors.grey,
           ),
@@ -134,9 +133,7 @@ class SideMenuWidget extends StatelessWidget {
 
 class SideMenuBodyWidget extends StatefulWidget {
   const SideMenuBodyWidget({
-    Key? key,
-    required this.controller,
-    required this.mobile,
+    required this.controller, required this.mobile, Key? key,
   }) : super(key: key);
 
   final SidebarXController controller;
@@ -147,15 +144,6 @@ class SideMenuBodyWidget extends StatefulWidget {
 }
 
 class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
-  late double deviceWidth, deviceHeight;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    deviceWidth = MediaQuery.of(context).size.width;
-    deviceHeight = MediaQuery.of(context).size.height;
-  }
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -164,29 +152,24 @@ class _SideMenuBodyWidgetState extends State<SideMenuBodyWidget> {
         switch (widget.controller.selectedIndex) {
           case 0:
             return widget.mobile
-                ? MobileProductPage(
-                    deviceWidth: deviceWidth,
-                    deviceHeight: deviceHeight,
-                  )
-                : DesktopProductPage(
-                    deviceWidth: deviceWidth, deviceHeight: deviceHeight);
+                ? MobileProductPage()
+                : const DesktopProductPage();
           case 1:
             return widget.mobile
                 ? const MobileSwiftProjectsPage()
-                : DesktopSwiftProjectsPage(deviceHeight: deviceHeight);
+                : const DesktopSwiftProjectsPage();
           case 2:
             return widget.mobile
                 ? const MobileFlutterProjectsPage()
-                : DesktopFlutterProjectsPage(
-                    deviceWidth: deviceWidth, deviceHeight: deviceHeight);
+                : const DesktopFlutterProjectsPage();
           case 3:
             return widget.mobile
                 ? const MobileAwsProjectsPage()
-                : DesktopAwsProjectsPage(deviceHeight: deviceHeight);
+                : const DesktopAwsProjectsPage();
           case 4:
             return widget.mobile
                 ? const MobileBackendProjectsPage()
-                : DesktopBackendProjectsPage(deviceWidth: deviceWidth);
+                : const DesktopBackendProjectsPage();
           case 5:
             return widget.mobile
                 ? MobilePolicyPage(isJP: true)
